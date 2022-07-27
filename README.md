@@ -15,4 +15,4 @@
 
 ## Installation
 Installtion script will install relevant packages and create links for config files.
-`cd dotfiles/scripts &&  ./installation.sh`
+`cd ~ && git clone git@github.com:sabah1994/dotfiles.git && dotfiles/scripts/installation.sh`

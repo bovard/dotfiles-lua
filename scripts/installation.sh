@@ -167,3 +167,6 @@ setup_tmux
 install_zsh
 download_and_setup_powerleveltheme
 install_font $machine
+
+# link gitignore
+ln -sf ~/dotfiles/git/.gitignore ~/.gitignore
