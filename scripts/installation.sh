@@ -69,6 +69,7 @@ clone_dot_files(){
     cd ~
     git clone git@github.com:sabah1994/dotfiles.git
 }
+
 setup_vim(){
     echo "==================================="
     echo "Downlading plug manager"
@@ -132,17 +133,11 @@ download_and_setup_powerleveltheme(){
 }
 
 install_font(){
-    if [ "$1" == "Linux" ]
-    then
-        /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/JetBrains/JetBrainsMono/master/install_manual.sh)"
-        echo "==================================="
-        echo "JetBrains Mono font installed, Set it in terminal preference"
-        echo "==================================="
-        return
-    fi
-    echo "==================================="
-    echo "Please visit https://www.jetbrains.com/lp/mono/ and install the font"
-    echo "==================================="
+    # insatll jetBrainsMono Nerd Font
+    cd ~ && git clone --filter=blob:none --sparse git@github.com:ryanoasis/nerd-fonts
+    cd nerd-fonts
+    git sparse-checkout add patched-fonts/JetBrainsMono install.sh
+    ./install.sh JetBrainsMono
 }
 
 machine=$(what_os)
