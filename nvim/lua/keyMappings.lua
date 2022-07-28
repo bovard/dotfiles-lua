@@ -57,3 +57,7 @@ keymap("n", "<F5>", ":%y+<CR>", opts)
 
 -- escape: also clears highlighting
 keymap("n", "<esc>", "<Cmd>noh<return><esc>", opts)
+
+-- indent and keep stay in visualMode
+keymap("v", ">", ">gv", opts)
+keymap("v", "<", "<gv", opts)
