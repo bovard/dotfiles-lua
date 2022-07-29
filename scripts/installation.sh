@@ -64,12 +64,6 @@ setup_tmux() {
     ln -sf ~/dotfiles/tmux/.tmux.conf ~/.tmux.conf
 }
 
-clone_dot_files(){
-    rm -rf ~/dotfiles
-    cd ~
-    git clone git@github.com:sabah1994/dotfiles.git
-}
-
 setup_vim(){
     echo "==================================="
     echo "Downlading plug manager"
@@ -155,7 +149,6 @@ else
 fi
 
 
-clone_dot_files
 install_packages "$install_prefix"
 setup_vim
 setup_tmux
