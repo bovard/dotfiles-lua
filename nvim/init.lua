@@ -2,7 +2,7 @@ local Plug = vim.fn["plug#"]
 
 vim.call("plug#begin", "~/.vim/plugged")
 -- UI
-Plug("morhetz/gruvbox")                                         -- Theme
+Plug("luisiacc/gruvbox-baby")                                   -- Theme
 Plug("kyazdani42/nvim-web-devicons")                            -- File Icons
 Plug("kyazdani42/nvim-tree.lua")                                -- File explorer
 Plug("nvim-lualine/lualine.nvim")                               -- Status line
@@ -51,7 +51,7 @@ require("autocmds")
 
 -- PLUGINS configuration
 require("plug-config/coc")                                      -- coc.vim
-require("plug-config/gruvbox")                                  -- gruvbox | theme
+require("plug-config/gruvbox-baby")                             -- gruvbox | theme
 require("plug-config/nvimTree")                                 -- nvim-tree | file explorer
 require("plug-config/lualine")                                  -- lualine.nvim | statusline
 require("plug-config/bufferline")                               -- bufferline.nvim
