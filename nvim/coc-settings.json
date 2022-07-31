@@ -1,6 +1,6 @@
 {
     // Refer to this link https://github.com/neoclide/coc.nvim/blob/master/data/schema.json
-    "diagnostic.level": "warning",
+    "diagnostic.level": "hint",
     "diagnostic.errorSign": "",
     "diagnostic.warningSign": "",
     "diagnostic.infoSign": "",

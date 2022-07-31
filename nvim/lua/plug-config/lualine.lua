@@ -12,7 +12,7 @@ require('lualine').setup({
             {
                 "diagnostics",
                 sources = { "coc" },
-                sections = { "info", "warn", "error" },
+                sections = { "hint", "warn", "error"},
                 symbols = { error = " " },
                 always_visible = true -- Show diagnostics even if there are none.
             }
