@@ -50,7 +50,6 @@ require("autocmds")
 
 
 -- PLUGINS configuration
-require("plug-config/coc")                                      -- coc.vim
 require("plug-config/gruvbox-baby")                             -- gruvbox | theme
 require("plug-config/nvimTree")                                 -- nvim-tree | file explorer
 require("plug-config/lualine")                                  -- lualine.nvim | statusline
@@ -63,6 +62,7 @@ require("plug-config/hop")                                      -- hop.vim
 require("plug-config/fzf")                                      -- fzf | fuzzy search finder
 require("plug-config/vimspector")                               -- vimspector | debuggging
 require('plug-config/quickScope')                               -- quick-scope
+require("plug-config/coc")                                      -- coc.vim
 
 -- vim-commentary
 vim.api.nvim_create_autocmd("FileType", { pattern = { "json" }, command = [[setlocal commentstring=//\ %s]] })

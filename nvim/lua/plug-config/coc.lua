@@ -15,6 +15,16 @@ vim.g["coc_global_extensions"] = {
     "coc-sumneko-lua"
 }
 
+-- highlight
+-- for custom pop menu
+vim.highlight.create("CocCustomPopup", { guifg = "#ebdbb2", guibg = "#282828" })
+-- border
+vim.highlight.create("CocCustomPopupBoder", { guifg = "#5F5F5F", gui = "bold" })
+-- selected row
+vim.highlight.create("CocMenuSel", { guibg = "#3c3836", gui = "bold" })
+-- matched_text
+vim.highlight.create("CocSearch", { guifg = "#fabd2f" })
+
 -- AutoCmds
 -- highlight the symbol and its references when holding the cursor.
 vim.api.nvim_create_autocmd("CursorHold", { pattern = '*', command = [[call CocActionAsync("highlight")]] })
@@ -29,21 +39,28 @@ vim.g["coc_snippet_prev"] = ""
 keymap(
     "i",
     "<c-j>",
-    [[pumvisible() ? "\<c-n>" : coc#jumpable() ? "\<c-r>=coc#rpc#request('snippetNext', [])<cr>" : "\<c-j>"]],
+    [[coc#pum#visible() ? coc#pum#next(1) : coc#jumpable() ? "\<c-r>=coc#rpc#request('snippetNext', [])<cr>" : "\<c-j>"]]
+    ,
     expr_opts
 )
 keymap(
     "i",
     "<c-k>",
-    [[pumvisible() ? "\<c-p>" : coc#jumpable() ? "\<c-r>=coc#rpc#request('snippetPrev', [])<cr>" : "\<c-k>"]],
+    [[coc#pum#visible() ? coc#pum#prev(1) : coc#jumpable() ? "\<c-r>=coc#rpc#request('snippetPrev', [])<cr>" : "\<c-k>"]]
+    ,
+    expr_opts
+)
+
+-- use CR to complete
+keymap(
+    "i",
+    "<CR>",
+    [[coc#pum#visible() ? coc#pum#confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"]],
     expr_opts
 )
 
 -- use <c-space> to trigger completion.
-keymap("i", "<c-space>", "coc#refresh()", opts)
-
--- use <cr> for confirm completion, `<C-g>u` means break undo chain at current position.
-keymap("i", "<cr>", [[pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"]], expr_opts)
+keymap("i", "<c-space>", [[coc#refresh()]], expr_opts)
 
 -- navigate diagnostic
 keymap("n", "[a", "<Plug>(coc-diagnostic-prev)", { silent = true })
