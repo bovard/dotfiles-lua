@@ -40,6 +40,7 @@ Plug("junegunn/fzf", { ['do'] = vim.fn['fzf#install'] })        -- Installs FZF
 Plug("junegunn/fzf.vim")                                        -- Fuzzy finder
 Plug("stevearc/aerial.nvim")                                    -- Code outline
 Plug("jiangmiao/auto-pairs")                                    -- Auto pairs
+Plug("folke/which-key.nvim")                                    -- Which key
 vim.call("plug#end")
 
 
@@ -62,6 +63,7 @@ require("plug-config/hop")                                      -- hop.vim
 require("plug-config/fzf")                                      -- fzf | fuzzy search finder
 require("plug-config/vimspector")                               -- vimspector | debuggging
 require('plug-config/quickScope')                               -- quick-scope
+require('plug-config/whichKey')                                 -- which-key
 require("plug-config/coc")                                      -- coc.vim
 
 -- vim-commentary
@@ -72,3 +74,6 @@ vim.api.nvim_command([[silent! call repeat#set("\<Plug>MyWonderfulMap", v:count)
 
 -- neoscroll
 require('neoscroll').setup()
+
+-- highlights
+require("highlights")
