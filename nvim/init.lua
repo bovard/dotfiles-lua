@@ -48,6 +48,7 @@ vim.call("plug#end")
 require("options")
 require("keyMappings")
 require("autocmds")
+require("textObjects")
 
 
 -- PLUGINS configuration
